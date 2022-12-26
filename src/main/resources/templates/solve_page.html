@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/Styles/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+</head>
+<body>
+    <div>
+        <h2>Результат</h2>
+    </div>
+
+    <div class="result">
+        <p>Рівняння, яке задає площину другого порядку:</p>
+        <p th:text="${equation.EquationWriter()}"></p><br>
+        <p>Вилучимо з нього коефіцієнти та знайдемо τ₁, τ₂, k₁, k₂, δ, Δ.</p>
+        <hr>
+        <p th:text="${t1matrix}"/><br>
+        <p th:text="${t2matrix}"/><br>
+        <p th:text="${deltamatrix}"/><br>
+        <p th:text="${bigdetmatrix}"/><br>
+        <p th:text="${k2matrix}"/><br>
+        <p th:text="${k1matrix}"/>
+        <hr>
+        <p th:text="${explanation_part1}"/>
+        <p th:text="${explanation_part2}"/>
+        <p th:text="${explanation_part3}"/>
+    </div>
+
+    <div class="btn_menu">
+        <form>
+            <button formaction="/" class="btn">Повернутися на головну сторінку</button>
+        </form>
+
+    </div>
+
+</body>
+</html>

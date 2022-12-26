@@ -1,0 +1,103 @@
+body{
+    font-size: 20px;
+    margin-left: 20px;
+    font-family: "Segoe UI";
+}
+
+h2,h5 {
+    margin-bottom: 20px;
+}
+
+.error {
+    color: #e51e1e;
+    font-size: 14px;
+}
+
+.rules {
+    font-family: "Segoe UI";
+    color: #3e4141;
+    font-size: 16px;
+    display: block;
+}
+
+#equation_form {
+    font-weight: 500;
+    font-size: 18px;
+    width: 100%;
+    margin: 20px 0 0 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.num_input input{
+    font-size: 16px;
+    max-width: 30px;
+    font-family: "Segoe UI";
+    display: inline-block;
+}
+
+.num_input{
+    display: inline-block;
+}
+
+button {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #FAFBFC;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    color: #24292E;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Segoe UI";
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 16px;
+    position: relative;
+    vertical-align: middle;
+}
+
+button:hover {
+    background-color: #F3F4F6;
+    transition-duration: 0.1s;
+}
+
+.result { 
+    font-family: "Segoe UI";
+    font-size: 16px;
+    color: #3e4141;
+}
+
+.result p{
+    margin: 0;
+}
+
+#solve{
+    font-family: "Segoe UI";
+    font-size: 16px;
+    color: #3e4141;
+    margin: 0;
+}
+
+.btn_menu{
+    display: inline-block;
+}
+
+.btn_menu form{
+    display: inline-block;
+}
+
+nav {
+    border: 1px solid #24292E;
+    width: 40%;
+    height:300px;
+    overflow:scroll;
+
+}
+nav::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/Styles/style.css">
+</head>
+<body>
+    <div>
+        <h2>Визначення поверхні другого порядку</h2>
+    </div>
+    
+    <div class = "rules">
+        <p><strong>Невеличкі застереження.</strong><br>Вводити у клітинки можна тільки числа.<br>
+        При вказуванні десяткових дробів, записуйте числа через точку, а не кому.(Наприклад, 3.14 а не 3,14)</p>
+    </div>
+
+    <form  th:action="@{/solve}" method="post" th:object="${equation}" id="equation_form">
+        
+        <div class="num_input">
+            <input id = "a11" type="number" step="any" th:field="*{a11}"/>
+            <label for="a11">x<sup>2</sup>+</label>
+        </div>
+        <div class="num_input">
+            <input id = "a22" type="number" step="any" th:field="*{a22}" required/>
+            <label for="a22">y<sup>2</sup>+</label>
+        </div>
+        <div class="num_input">
+            <input id = "a33" type="number" step="any" th:field="*{a33}" required/>
+            <label for="a33">z<sup>2</sup>+</label>
+        </div>
+        <div class="num_input">
+            <input id = "a12" type="number" step="any" th:field="*{a12}" required/>
+            <label for="a12">xy+</label>
+        </div>
+        <div class="num_input">
+            <input id = "a13" type="number" step="any" th:field="*{a13}" required/>
+            <label for="a13">xz+</label>
+        </div>
+        <div class="num_input">
+            <input id = "a23" type="number" step="any" th:field="*{a23}" required/>
+            <label for="a23">yz+</label>
+        </div>
+        <div class="num_input">
+            <input id = "a1" type="number" step="any" th:field="*{a1}" required/>
+            <label for="a1">x+</label>
+        </div>
+        <div class="num_input">
+            <input id = "a2" type="number" step="any" th:field="*{a2}" required/>
+            <label for="a2">y+</label>
+        </div>
+        <div class="num_input">
+            <input id = "a3" type="number" step="any" th:field="*{a3}" required/>
+            <label for="a3">z+</label>
+        </div>
+        <div class="num_input">
+            <input id = "a0" type="number" step="any" th:field="*{a0}" required/>
+            <label for="a0">=0</label>
+        </div>
+
+        <div class = "error" th:text="${error_message}"></div>
+
+        <div class="btn">
+            <button type="submit">Порахувати</button>
+            <button type="reset">Очистити</button>
+        </div>
+    </form>
+
+    <h5>Минулі рівняння:</h5>
+    <nav>
+        <div th:each="el : ${equations}" style ="border: 1px solid #24292E; padding-left: 5px; font-size: 16px;">
+            <p th:text="${el.surface_name}"/>
+            <p th:text="${el.EquationWriter()}"/>
+        </div>
+    </nav>
+    <form>
+        <button formaction="/freedb" type="submit" >Очистити базу даних</button>
+    </form>
+
+
+
+</body>
+</html>
