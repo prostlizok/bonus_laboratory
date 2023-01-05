@@ -1,7 +1,7 @@
-package com.example.bonus_laboratory.Calculations.Determinant;
+package com.example.bonus_laboratory.calculations.determinant;
 
 public class Determinant {
-    public static double detFinder(double matrix[][]){
+    public double determinantFinder(double matrix[][]){
         double determinant = 0;
         if(matrix.length==1){
             determinant=matrix[0][0];
@@ -24,7 +24,7 @@ public class Determinant {
                     }
                 }
             }
-            determinant += matrix[0][m] * Math.pow(-1,(int)m) * detFinder(temp);
+            determinant += matrix[0][m] * Math.pow(-1,(int)m) * determinantFinder(temp);
         }
         return determinant;
     }

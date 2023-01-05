@@ -1,6 +1,6 @@
-package com.example.bonus_laboratory.Repo;
+package com.example.bonus_laboratory.repo;
 
-import com.example.bonus_laboratory.Models.Equation;
+import com.example.bonus_laboratory.models.Equation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EquationRepository extends JpaRepository<Equation, Long> {

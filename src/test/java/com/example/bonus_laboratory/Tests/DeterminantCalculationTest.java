@@ -1,27 +1,34 @@
 package com.example.bonus_laboratory.Tests;
 
-import com.example.bonus_laboratory.Calculations.Determinant.Determinant;
+import com.example.bonus_laboratory.calculations.determinant.Determinant;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DeterminantCalculationTest {
+    Determinant determinant = new Determinant();
+
     @Test
-    public void checkDeterminant1() throws Exception{
+    public void checkDeterminant(){
+        double[][] matrix = {{1}};
+        assertEquals(determinant.determinantFinder(matrix), 1);
+    }
+    @Test
+    public void checkDeterminant1(){
         double[][] matrix = {{2,3},{1,3}};
-        assertEquals(Determinant.detFinder(matrix), 3);
+        assertEquals(determinant.determinantFinder(matrix), 3);
     }
 
     @Test
-    public void checkDeterminant2() throws Exception{
+    public void checkDeterminant2(){
         double[][] matrix = {{1,1,0}, {0,-2,1}, {1,4,2}};
-        assertEquals(Determinant.detFinder(matrix), -7);
+        assertEquals(determinant.determinantFinder(matrix), -7);
     }
 
     @Test
-    public void checkDeterminant3() throws Exception{
+    public void checkDeterminant3(){
         double[][] matrix = {{1,2,2.5,3.5}, {2,2,3,4}, {2.5,3,3,4.5}, {3.5,4,4.5,-4}};
-        assertEquals(Determinant.detFinder(matrix), -26.25);
+        assertEquals(determinant.determinantFinder(matrix), -26.25);
     }
 
 
